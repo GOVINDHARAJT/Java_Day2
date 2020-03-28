@@ -3,41 +3,37 @@ package model;
 //Type your code here
 
 public class User{
-	private String name;
-	private String month;
-	private String date;
-	private String gender;
-	public User(String name, String month, String date, String gender) {
-		super();
-		this.name = name;
-		this.month = month;
-		this.date = date;
-		this.gender = gender;
+	String name;
+	String email;
+	String dob;
+	String gender;
+	 public User(String name,String gender,String dob) {
+		this.name=name;
+		this.dob=dob;
+		this.gender=gender;
+	}  
+		public String getname() {
+			return name;
+		}
+		public void setname(String name) {
+			this.name=name;
+		}
+		public String getemail() {
+			return email;
+		}
+		public void setemail(String email) {
+			this.email=email;
+		}
+		public String getdob() {
+			return dob;
+		}
+		public void setdob(String dob) {
+			this.dob=dob;
+		}
+		public String getgender() {
+			return gender;
+		}
+		public void setgender(String gender) {
+			this.gender=gender;
+		}
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getMonth() {
-		return month;
-	}
-	public void setMonth(String month) {
-		this.month = month;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	
-	
-}

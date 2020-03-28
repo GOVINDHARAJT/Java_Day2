@@ -1,129 +1,77 @@
 package service;
 
-// Type your code
 import model.User;
-import java.lang.String;
-import java.util.Scanner;
-import model.User;
-import java.util.Date;
 
 public class AstroCalculator {
-	
-	 public String findSign(model.User u) {
-		 String month=u.getMonth();
-		String date=u.getDate();
-		
-		if(month=="12") {
-			if(date <= "22") {
-				return "Sagitarius";
-			}
-			else {
-				return "capricorn";
-			}
-			
-		}
-		else if(month=="01") {
-				if(date<"20") {
-					return "capricorn";
-				}
-				else {
-					return "aquarious";
-				}
-				
-			}
-		else if(month=="02") {
-			if(date<"19") {
-				return "aquarious";
-			}
-			else {
-				return "pisces";
-			}
-			
-		}
-	
-		else if(month=="03") {
-			if(date<"21") {
-				return "pisces";
-			}
-			else {
-				return "aries";
-			}
-			
-		}
-	
-		else if(month=="04") {
-			if(date<"20") {
-				return "aries";
-			}
-			else {
-				return "taurus";
-			}
-			
-		}
-		else if(month=="05") {
-			if(date<"21") {
-				return "taurus";
-			}
-			else {
-				return "gemini";
-			}
-			
-		}
-		else if(month=="06") {
-			if(date<"21") {
-				return "gemini";
-			}
-			else {
-				return "cancer";
-			}
-			
-		}
-		else if(month=="07") {
-			if(date<"23") {
-				return "cancer";
-			}
-			else {
-				return "leo";
-			}
-			
-		}
-		else if(month=="08") {
-			if(date<"23") {
-				return "leo";
-			}
-			else {
-				return "virgo";
-			}
-			
-		}
-		else if(month=="09") {
-			if(date<"23") {
-				return "virgo";
-			}
-			else {
-				return "libra";
-			}
-			
-		}
-		else if(month=="10") {
-			if(date<"23") {
-				return "libra";
-			}
-			else {
-				return "scorpio";
-			}
-			
-		}
-		else {
-			if(date<"22") {
-				return "scorpio";
-			}
-			else {
-				return "Sagitarius";
-			}
-			
-		
-		}
-		
-	
-	 }
+	public String findSign(User user) {
+			      int day = Integer.parseInt(user.getdob().split("-")[0]);
+			      System.out.println(day);
+			      String month = user.getdob().split("-")[1];
+			      System.out.println(month);
+			      String sign="";
+			      if (month.equals("01")) {
+			         if (day < 20)
+			            sign = "Capricorn";
+			         else
+			            sign = "Aquarius";
+			      } else if (month.equals("02")) {
+			         if (day < 19)
+			            sign = "Aquarius";
+			         else
+			            sign = "Pisces";
+			      } else if(month.equals("03")) {
+			         if (day < 21)
+			            sign = "Pisces";
+			         else
+			            sign = "Aries";
+			      } else if (month.equals("04")) {
+			         if (day < 20)
+			            sign = "Aries";
+			         else
+			            sign = "Taurus";
+			      } else if (month.equals("05")) {
+			         if (day < 21)
+			            sign = "Taurus";
+			         else
+			            sign = "Gemini";
+			      } else if(month.equals("06")) {
+			         if (day < 21)
+			            sign = "Gemini";
+			         else
+			            sign = "Cancer";
+			      } else if (month.equals("07")) {
+			         if (day < 23)
+			            sign = "Cancer";
+			         else
+			            sign = "Leo";
+			      } else if(month.equals("08")) {
+			         if (day < 23) 
+			            sign = "Leo"; 
+			         else
+			            sign = "Virgo";
+			      } else if (month.equals("09")) {
+			         if (day < 23)
+			            sign = "Virgo";
+			         else
+			            sign = "Libra";
+			      } else if (month.equals("10")) {
+			         if (day < 23)
+			            sign = "Libra";
+			         else
+			            sign = "Scorpio";
+			      } else if (month.equals("11")) {
+			         if (day < 22)
+			            sign = "Scorpio";
+			         else
+			            sign = "Sagittarius";
+			      } else if (month.equals("12")) {  
+			         if (day < 22)
+			            sign = "Sagittarius"; 
+			         else
+			            sign ="Capricorn";
+			      }
+			    //  System.out.println("The astrological sign for " + day + " " + month + " is " + sign );
+			   
+		return sign;
+	}
+}
