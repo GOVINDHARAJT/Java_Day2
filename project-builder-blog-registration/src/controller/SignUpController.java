@@ -10,7 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import businesslogic.RegistrationValidation;
 import model.User;
+
 
 
 @WebServlet(urlPatterns= {"/signup"})
@@ -35,18 +38,19 @@ public class SignUpController extends HttpServlet {
 		String password = request.getParameter("password"); 
 		String confirmPassword = request.getParameter("confirmPassword"); 
 		LocalDateTime date= LocalDateTime.now(); 
-		
+		RegistrationValidation checkUser= new RegistrationValidation();
+		//z.checkUserDetails(email, password, confirmPassword);
 
 		
 		if(checkUser.checkUserDetails(email, password, confirmPassword))
 		{
 			User user=new User(email,password,date);
-			user.setEmail(email);
-			user.setPassword(password);
-			user.setDate(date);
-			System.out.println(user.getEmail());
-			System.out.println(user.getPassword());
-			System.out.println(user.getDate());
+			user.setemail(email);
+			user.setpassword(password);
+			user.setdate(date);
+			System.out.println(user.getemail());
+			System.out.println(user.getpassword());
+			System.out.println(user.getdate());
 			request.setAttribute("message", "Registration Successful");
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/signupView.jsp");
 			rd.forward(request, response);

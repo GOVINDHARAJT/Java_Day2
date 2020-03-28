@@ -51,9 +51,9 @@ And finally, create a pull request so your ProGrad Mentor (PM) can review your w
 
 ## Progression - 1 
 1. ***Create a class called User inside the model package with the following arguments***
-   - ***String name***
-   - ***int email***
-   - ***LocalDate date***
+   - **String email**
+   - **String password**
+   - **LocalDateTime date**
 2. ***Generate appropriate getters and setters.***
 3. ***Generate a 3 argument constructor in the User class.***
 
@@ -62,7 +62,7 @@ And finally, create a pull request so your ProGrad Mentor (PM) can review your w
    - ***public boolean checkUserDetails(String email, String password, String confirmPassword)*** 
    - ***private boolean validPassword(String password, String confirmPassword)***
    - ***private boolean validEmail(String email)***
-2. ***CheckUserDetails should invoke two methods validPassword and validEmail.
+2. ***CheckUserDetails should invoke two methods validPassword and validEmail.***
 3. ***Email should pass the following validations***
    - ***Email can contain alphanumeric value***
    - ***Allowed special characters - _, @, .[at, underscore, dot]***
